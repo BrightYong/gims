@@ -1,0 +1,78 @@
+<div>
+    <app-top-bar></app-top-bar>
+
+    <!-- Second row -->
+    <div class="mt-2 pt-2 border-top">
+
+        <table style="width: 100%;">
+            <tr>
+                <td class="tleft" style="width: 33.3%; padding-left: 20px;">
+                    <img src="/assets/img/g-logo.png" style="width: 16px;" alt="" />
+                    <span class="page-title">Dashboard</span>
+                </td>
+                <td style="width: 33.3%;" class="center mt-2">
+                    <div class="tabs iblock">
+                        <div class="pills float" [class.active]="page.overview === true" (click)="setPage(1)">Overview</div>
+                        <div class="pills float"  [class.active]="page.products === true" (click)="setPage(2)">Products</div>
+                        <br class="clear">
+                    </div>
+                </td>
+                <td class="tright" style="width: 33.3%;">
+                    <button type="button" class="btn btn-sm btn-primary" style="margin-right: .8em;" placement="bottom"
+                            ngbPopover="This feature is not available yet" popoverTitle="Notification">
+                        <fa-icon [icon]="fa.plus"></fa-icon>
+                        Add Product
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+      <div class="overview mt-4 mr-2" *ngIf="page.overview == true">
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+
+                      <!-- Best Selling Product -->
+                      <app-best-selling></app-best-selling>
+
+                      <!-- Most Viewed Product -->
+                      <app-most-viewed></app-most-viewed>
+
+                      <!-- Most Profitable Sections -->
+                      <app-most-profitable></app-most-profitable>
+                  </div>
+                  <div class="col">
+
+                    <div class="mt--2">
+                      <!-- Most Profitable Categories -->
+                      <app-most-profitable></app-most-profitable>
+                    </div>
+
+                    <!-- Top Selling Products -->
+                    <app-image-list-amount></app-image-list-amount>
+                  </div>
+                  <div class="col">
+
+                    <div class="mt--2">
+                      <!-- Most Profitable Categories -->
+                      <app-image-list-amount></app-image-list-amount>
+
+                      <!-- General Statistics -->
+                      <app-general-statistics></app-general-statistics>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="p-2 products" *ngIf="page.products == true">
+
+        <div class="mat-elevation-z8">
+          <app-products></app-products>
+        </div>
+
+      </div>
+    </div>
+</div>

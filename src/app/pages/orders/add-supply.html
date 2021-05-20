@@ -1,0 +1,86 @@
+<b mat-dialog-title>Add a supply Entry</b>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <mat-form-field class="block">
+        <mat-label>Selected Product</mat-label>
+        <input
+          matInput
+          [disabled]="true"
+          [(ngModel)]="data.orderItem.productName"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <mat-form-field class="block">
+        <mat-label>Quantity Ordered</mat-label>
+        <input
+          matInput
+          [disabled]="true"
+          [(ngModel)]="newSupplyEntry.quantityOrdered"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <mat-form-field class="block">
+        <mat-label>Quantity Delivered</mat-label>
+        <input type="number" matInput placeholder="10000" [(ngModel)]="newSupplyEntry.quantityDelivered" />
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+      <mat-form-field class="block">
+        <mat-label>Quantity Accepted</mat-label>
+        <input
+          matInput type="number" [(ngModel)]="newSupplyEntry.quantityAccepted"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <mat-form-field class="block">
+        <mat-label>Quantity Defective</mat-label>
+        <input
+          matInput type="number" [(ngModel)]="newSupplyEntry.defectCount"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <mat-form-field class="block">
+        <mat-label>Quantity Rejected</mat-label>
+        <input matInput type="number" [(ngModel)]="newSupplyEntry.quantityRejected" />
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-8">
+      <mat-form-field class="block">
+        <mat-label>Select Supplier</mat-label>
+        <mat-select [(ngModel)]="newSupplyEntry.suppliers" multiple>
+          <mat-option *ngFor="let s of data.orderItem.suppliers" [value]="s.email">{{s.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+        <mat-checkbox class="example-margin" [(ngModel)]="newSupplyEntry.accessoriesSupplied">Accessories Supplied</mat-checkbox>
+    </div>
+  </div>
+
+  <div class="tright">
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn btn-sm"
+      (click)="createSupply()"
+    >
+      Save Supply Entry
+    </button>
+  </div>
+</div>

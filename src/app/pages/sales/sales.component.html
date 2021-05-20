@@ -1,0 +1,132 @@
+
+
+
+
+<div [class.isPrinting]="printService.isPrinting">
+<div class="layout container-fluid">
+  <div class="row h100p align-items-start">
+    <div class="col-xs-12 col-sm-10 offset-sm-1 h100p">
+      <div class="h100p" style="margin: 0 -13px">
+        <div>
+          <app-top-bar></app-top-bar>
+
+          <div class="page-title mt-6">Register New Sale</div>
+
+          <div class="row">
+            <div class="col-sm-12 col-md-7">
+              <div class="card mt-2 elevation">
+                <div class="card-title">
+                  <b>Search for Product</b>
+                </div>
+
+                <div class="card-content" style="max-height: 500px; overflow-y: auto; overflow-x: hidden;">
+                  <div class="row">
+                    <!-- col-sm-8 col-md-9 -->
+                    <div class="col-xs-12" style="margin: 10px;">
+
+                      <mat-form-field class="block">
+                        <mat-label>Type Product name or ID here</mat-label>
+                        <input matInput type="text" [(ngModel)]="searchValue">
+                        <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                      </mat-form-field>
+                    </div>
+
+                    <!-- <div class="col-xs-12 col-sm-4 col-md-3">
+                      <button mat-raised-button class="btn btn-sm block" color='primary'>
+                        <mat-icon>search</mat-icon>
+                        Search</button>
+                    </div> -->
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="p-results">
+                        <table class="table table-striped">
+                          <tr>
+                            <th>#</th>
+                            <th>Product Name</th>
+                          </tr>
+                          <tr class="result-item" *ngFor="let item of productItems | productFilter: searchValue"
+                            (click)="displayDetails(item)" [class.active]="item.ID === currentProductId">
+                            <td>{{item.ID}}</td>
+                            <td>{{item.name}}</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-5" *ngIf="currentDetails">
+              <div class="card mt-2 elevation">
+                <div class="card-title">
+                  <b>Product Description</b>
+                </div>
+
+                <div class="card-content">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <img
+                        class="product-item"
+                        [src]="currentDetails.image"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-sm-7">
+                      <div class="card-content">
+                        <p><b>Product ID:</b> #{{currentDetails.ID }}</p>
+                        <p><b>{{currentDetails.name}}</b></p>
+                        <p><b>Category:</b> {{currentDetails.category}}</p>
+                        <p><b>Amount:</b> {{ currentDetails.amount | currency: "₦ " }}</p>
+                      </div>
+
+                      <div class="footer">
+                        <button
+                          mat-raised-button
+                          color="primary"
+                          class="btn btn-sm"
+                          (click)="addingSale = true"
+                        >
+                          Add New Sale
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-2 elevation" *ngIf="addingSale === true">
+                <div class="card-title"><b>Customer Details</b></div>
+
+                <div class="card-content">
+                  <p>
+                    <mat-form-field appearance="legacy" class="block">
+                      <mat-label>Enter Customer Name</mat-label>
+                      <input matInput placeholder="Jane Duffour">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="legacy" class="block">
+                      <mat-label>Enter Customer Email</mat-label>
+                      <input matInput placeholder="jane@duffour@gmail.com">
+                    </mat-form-field>
+                  </p>
+
+                  <div class="footer tright">
+                    <button mat-raised-button color="primary" class="btn btn-sm" (click)="onPrintInvoice(); addingSale = true">
+                      Save & Print
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

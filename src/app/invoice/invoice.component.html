@@ -1,0 +1,151 @@
+
+<div class="invoice"
+     *ngFor="let invoice of invoiceIds; let i = index">
+  <div class="invoice-header">
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="/assets/img/gims-active.png" alt="" class="logo">
+      </div>
+      <div class="col-sm-6">
+        <h3 class="ititle">Invoice</h3>
+
+        <div class=""><b>Invoice Number:</b></div>
+        <div class="">{{invoice}}</div>
+        <br>
+
+        <div class=""><b>Date:</b></div>
+        <div class="">{{today | date: "YYYY-MM-dd"}}</div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <b>Bill To:</b>
+      <div class="ibody">
+        <div>{{(invoiceDetails[i] | async)?.customerName}}</div>
+        <div>{{(invoiceDetails[i] | async)?.streetAddress}}</div>
+        <div>{{(invoiceDetails[i] | async)?.city}}</div>
+        <div>{{(invoiceDetails[i] | async)?.country}}</div>
+      </div>
+
+      <!-- <div class="ibodyf">
+        <div><b>Tax Number:</b></div>
+        <div>12345 6789 GB0001</div>
+      </div> -->
+    </div>
+    <div class="col-sm-6">
+      <b>Bill From:</b>
+      <div class="ibody">
+        <div>Gates Solution Center</div>
+        <div>Rond Point Express</div>
+        <div>Yawunde</div>
+        <div>Cameroon, CR</div>
+      </div>
+      <br>
+
+      <div class="ibodyf">
+        <div><b>Tax Number:</b></div>
+        <div>12345 6789 GB0001</div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+
+  <div class="row" style="background: aliceblue;padding: 10px;">
+    <div class="col-sm-6">
+      <b>ITEM</b>
+    </div>
+    <div class="col-sm-2">
+      <b>COST</b>
+    </div>
+    <div class="col-sm-1">
+      <b>QTY</b>
+    </div>
+    <div class="col-sm-3">
+      <b>PRICE</b>
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px;">
+    <div class="col-sm-6">
+      <b>Product Name</b>
+    </div>
+    <div class="col-sm-2 bb">
+      $ 99.00
+    </div>
+    <div class="col-sm-2 bb">
+      1
+    </div>
+    <div class="col-sm-2 bb">
+      $99.00
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px;">
+    <div class="col-sm-6">
+    </div>
+    <div class="col-sm-4 bb">
+      Subtotal
+    </div>
+    <div class="col-sm-2 bb">
+      $99.00
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px;">
+    <div class="col-sm-6">
+    </div>
+    <div class="col-sm-4">
+      Discount
+    </div>
+    <div class="col-sm-2">
+      $-8.00
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px;">
+    <div class="col-sm-6">
+    </div>
+    <div class="col-sm-4">
+      VAT
+    </div>
+    <div class="col-sm-2">
+      $20.00
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px;">
+    <div class="col-sm-6">
+    </div>
+    <div class="col-sm-4">
+      <b>Invoice Total</b>
+    </div>
+    <div class="col-sm-2">
+      <b>$101.00</b>
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px;">
+    <div class="col-sm-6">
+    </div>
+    <div class="col-sm-4 bb">
+      <b>Paid</b>
+    </div>
+    <div class="col-sm-2 bb">
+      -$101.00
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px;">
+    <div class="col-sm-6">
+    </div>
+    <div class="col-sm-4">
+      <b>Amount Due</b>
+    </div>
+    <div class="col-sm-2">
+      0.00
+    </div>
+  </div>
+</div>

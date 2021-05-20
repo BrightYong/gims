@@ -1,0 +1,44 @@
+[
+  {
+     "image":"/assets/img/tedber.jpeg",
+     "name":"Tedber Soundbar",
+     "amount":4500,
+     "category":"Home Appliances",
+     "ID":1
+  },
+  {
+     "image":"/assets/img/mcs.jpeg",
+     "name":"Men's Casual Sneaker",
+     "amount":3500,
+     "category":"Clothing Apparel",
+     "ID":2
+  },
+  {
+     "image":"/assets/img/llcs.jpeg",
+     "name":"Ladies Leisure Casual Sneaker",
+     "amount":12000,
+     "category":"Clothing Apparel",
+     "ID":3
+  },
+  {
+     "image":"/assets/img/gionnee.jpeg",
+     "name":"Gionnee S11 Lite",
+     "amount":6500,
+     "category":"Phones",
+     "ID":4
+  },
+  {
+     "image":"/assets/img/seagate.jpeg",
+     "name":"Seagate 1TB HD",
+     "amount":15000,
+     "category":"Laptop Accessories",
+     "ID":5
+  },
+  {
+     "image":"/assets/img/oraimo.jpeg",
+     "name":"Oraimo Compact 1000",
+     "amount":8900,
+     "category":"Laptop Accessories",
+     "ID":6
+  }
+]

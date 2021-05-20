@@ -1,0 +1,36 @@
+.lp {
+    margin-left: 5px !important;
+    text-align: center;
+    padding: 1em !important;
+    padding-top: 1em !important;
+}
+.user-img > img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.vnav {
+    padding-left: 10px;
+    margin-top: 7em;
+    color: #bfbebe;
+}
+.vnav > div {
+    margin-bottom: 2em;
+}
+.vnav > div > a {
+    color: #bfbebe;
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    border-radius: 3px;
+}
+.vnav > div > a:hover {
+    color: #0d6efd;
+    background: #fff;
+}
+.vnav > div > a.active {
+    color: #0d6efd;
+    background: #fff;
+}

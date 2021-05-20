@@ -1,0 +1,16 @@
+ul {
+    list-style-type: none;
+    position: relative;
+    top: 9px;
+}
+ul > li {
+    display: inline-block;
+}
+ul > li > a {
+    display: block;
+    padding: 0 .7em 0 .7em;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+}

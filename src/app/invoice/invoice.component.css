@@ -1,0 +1,20 @@
+.invoice {
+  page-break-after: always;
+  padding-top: 5em;
+  font-size: 14px;
+}
+.invoice:last-child { page-break-after: avoid; }
+.ititle {
+  font-size: 16px;
+  font-weight: 600;
+}
+.logo {
+  width: 50px;
+}
+.invoice-header {
+  padding: 1em;
+  width: 100%;
+}
+.bb {
+  border-bottom: 2px solid #333333;
+}

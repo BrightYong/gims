@@ -1,0 +1,49 @@
+<div class="lp">
+    <div class="user-img">
+        <img src="/assets/img/def-user.jpeg" alt="DU">
+    </div>
+
+    <div class="vnav">
+      <div>
+
+        <a *ngIf="page==='dashboard'" [class.active]="page==='dashboard'" #tooltip="matTooltip"
+              matTooltip="Dashboard"
+              [matTooltipPosition]="'right'">
+            <img src="/assets/img/gims-active.png" style="width: 16px;" alt="" />
+        </a>
+        <a *ngIf="page!=='dashboard'" #tooltip="matTooltip"
+              matTooltip="Dashboard"
+              [matTooltipPosition]="'right'">
+            <img src="/assets/img/g-logo.png" style="width: 16px;" alt="" />
+        </a>
+      </div>
+      <div>
+        <a #tooltip="matTooltip" [class.active]="page==='add-product'"
+            matTooltip="Add Product"
+            [matTooltipPosition]="'right'">
+          <fa-icon [icon]="fa.plus"></fa-icon>
+        </a>
+      </div>
+      <div>
+        <a #tooltip="matTooltip" [class.active]="page==='products'"
+            matTooltip="Products"
+            [matTooltipPosition]="'right'">
+          <fa-icon [icon]="fa.barcode"></fa-icon>
+        </a>
+      </div>
+      <div>
+        <a #tooltip="matTooltip" [class.active]="page==='users'"
+            matTooltip="Users"
+            [matTooltipPosition]="'right'">
+          <fa-icon [icon]="fa.user"></fa-icon>
+        </a>
+      </div>
+      <div>
+        <a #tooltip="matTooltip"
+            matTooltip="Logout"
+            [matTooltipPosition]="'right'">
+          <fa-icon [icon]="fa.lock"></fa-icon>
+        </a>
+      </div>
+    </div>
+</div>

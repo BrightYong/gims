@@ -1,0 +1,33 @@
+.result-item {
+  padding: 10px 15px;
+  border-bottom: 1px solid #CFCFCF;
+  cursor: pointer;
+  user-select: none;
+}
+.result-item.active {
+  background-color: aliceblue !important;
+}
+.p-results {
+  border: 1px solid #CFCFCF;
+  border-bottom: 0;
+}
+.result-item:nth-child(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+.img-circle-sm {
+  width: 35px;
+  height: 35px;
+  border-radius: 40px;
+}
+
+
+
+.logo {
+  width: 24px;
+}
+.invoice-header {
+  background: #f8f8fa;
+  border: 1px solid #ccc;
+  padding: 1em;
+  width: 100%;
+}
